@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="border_margin">10dp</dimen>
+    <dimen name="title_text_size">16sp</dimen>
+    <dimen name="departure_text_size">10sp</dimen>
+</resources>
