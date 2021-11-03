@@ -47,6 +47,11 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.6.0'
     // Cicirone
     implementation 'com.github.terrakok:cicerone:7.0'
+    // Glide
+    implementation "com.github.bumptech.glide:glide:4.12.0"
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.12.0@aar"
+    implementation "com.github.bumptech.glide:glide:4.12.0"
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.12.0@aar"
     // OkHttp
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     // Moxy
@@ -64,6 +69,8 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.20"
     implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    // Timber
+    implementation 'com.jakewharton.timber:timber:5.0.1'
     // ViewBindingProperty
     implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.4.6'
     // Tests

@@ -3,7 +3,7 @@ package com.geekbrains.kodetraineedev.base_logic.users
 import com.geekbrains.kodetraineedev.base_logic.BasePresenter
 import com.geekbrains.kodetraineedev.helpers.extensions.convertItemsDtoToCompany
 import com.geekbrains.kodetraineedev.helpers.scheduler.AppSchedulers
-import com.geekbrains.kodetraineedev.model.repository.CompanyUserRepository
+import com.geekbrains.kodetraineedev.model.repositories.company.CompanyUserRepository
 import com.github.terrakok.cicerone.Router
 import io.reactivex.rxkotlin.plusAssign
 
@@ -18,6 +18,7 @@ class UsersPresenter(
     }
 
     private fun loadData() {
+        viewState.startUpdateUsers()
         disposables +=
             companyUserRepository
                 .getUsersFromServer()

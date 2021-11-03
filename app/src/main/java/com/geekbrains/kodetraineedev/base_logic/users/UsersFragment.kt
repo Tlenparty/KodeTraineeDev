@@ -9,15 +9,15 @@ import by.kirich1409.viewbindingdelegate.CreateMethod
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geekbrains.kodetraineedev.App.Navigation.router
 import com.geekbrains.kodetraineedev.base_logic.users.adapter.UserAdapter
-import com.geekbrains.kodetraineedev.databinding.FragmentUsersBinding
+import com.geekbrains.kodetraineedev.databinding.UsersFragmentBinding
 import com.geekbrains.kodetraineedev.helpers.scheduler.AppSchedulersFactory
-import com.geekbrains.kodetraineedev.model.repository.CompanyUserRepositoryFactory
+import com.geekbrains.kodetraineedev.model.repositories.company.CompanyUserRepositoryFactory
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
 class UsersFragment : MvpAppCompatFragment(), UsersView, UserAdapter.Delegate {
 
-    private val binding: FragmentUsersBinding by viewBinding(createMethod = CreateMethod.INFLATE)
+    private val binding: UsersFragmentBinding by viewBinding(createMethod = CreateMethod.INFLATE)
     private val usersAdapter = UserAdapter(this)
     private val presenter: UsersPresenter by moxyPresenter {
         UsersPresenter(
@@ -38,6 +38,10 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, UserAdapter.Delegate {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvUsers.adapter = usersAdapter
+    }
+
+    override fun startUpdateUsers() {
+        binding.progressBar2.visibility = View.GONE
     }
 
     override fun showUsers(users: List<CompanyUsersViewModel>) {

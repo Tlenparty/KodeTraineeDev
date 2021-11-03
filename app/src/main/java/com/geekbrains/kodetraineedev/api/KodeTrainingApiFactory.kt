@@ -8,7 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object KodeTrainingApiFactory {
 
-    private val BASE_URL = "https://stoplight.io/mocks/kode-education/trainee-test/25143926/"
+    private const val BASE_URL = "https://stoplight.io/mocks/kode-education/trainee-test/25143926/"
+
     fun create(): KodeTrainingApi =
         Retrofit.Builder()
             .baseUrl(BASE_URL)

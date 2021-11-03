@@ -15,8 +15,22 @@ data class CompanyUser(
     @SerializedName("avatarUrl")
     val avatarUrl: String,
 
-    @Expose
-    val department: String
+    @Expose()
+    @SerializedName("department")
+    val department: String,
+
+    @Expose()
+    @SerializedName("birthday")
+    val birthday: String,
+
+    @Expose()
+    @SerializedName("userTag")
+    val userTag: String,
+
+    @Expose()
+    @SerializedName("phone")
+    val phone: String
+
 )
 
 /*

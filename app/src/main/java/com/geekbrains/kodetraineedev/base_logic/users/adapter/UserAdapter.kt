@@ -22,7 +22,7 @@ class UserAdapter(private val delegate: Delegate?) :
         UserViewHolder(
             LayoutInflater
                 .from(parent.context)
-                .inflate(R.layout.fragment_users_recycler_item, parent, false)
+                .inflate(R.layout.users_recycler_item_fragment, parent, false)
         )
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) =

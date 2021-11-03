@@ -1,7 +1,6 @@
 package com.geekbrains.kodetraineedev.base_logic.users
 
 import com.geekbrains.kodetraineedev.base_logic.ScreenView
-import com.geekbrains.kodetraineedev.model.entities.CompanyUser
 import moxy.viewstate.strategy.AddToEndSingleStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
@@ -9,5 +8,7 @@ import moxy.viewstate.strategy.StateStrategyType
 interface UsersView : ScreenView {
 
     fun showUsers(users: List<CompanyUsersViewModel>)
+
+    fun startUpdateUsers()
 
 }

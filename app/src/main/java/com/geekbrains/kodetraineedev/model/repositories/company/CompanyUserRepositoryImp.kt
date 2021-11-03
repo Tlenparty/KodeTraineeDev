@@ -1,4 +1,4 @@
-package com.geekbrains.kodetraineedev.model.repository
+package com.geekbrains.kodetraineedev.model.repositories.company
 
 import com.geekbrains.kodetraineedev.api.KodeTrainingApi
 import com.geekbrains.kodetraineedev.model.entities.ItemsDTO
