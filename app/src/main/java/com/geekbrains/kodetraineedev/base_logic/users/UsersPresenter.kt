@@ -1,8 +1,11 @@
 package com.geekbrains.kodetraineedev.base_logic.users
 
+import android.os.Bundle
 import com.geekbrains.kodetraineedev.base_logic.BasePresenter
+import com.geekbrains.kodetraineedev.base_logic.profile.ProfileFragment
 import com.geekbrains.kodetraineedev.helpers.extensions.convertItemsDtoToCompany
 import com.geekbrains.kodetraineedev.helpers.scheduler.AppSchedulers
+import com.geekbrains.kodetraineedev.helpers.screens.ProfileScreen
 import com.geekbrains.kodetraineedev.model.repositories.company.CompanyUserRepository
 import com.github.terrakok.cicerone.Router
 import io.reactivex.rxkotlin.plusAssign
@@ -31,6 +34,13 @@ class UsersPresenter(
                     viewState::showUsers,
                     viewState::showError
                 )
+    }
+
+    fun displayProfile(user:CompanyUsersViewModel){
+        val bundle = Bundle().apply {
+            putParcelable(ProfileFragment.USER_ID,user)
+        }
+        router.navigateTo(ProfileScreen(bundle))
     }
 
     override fun onDestroy() {

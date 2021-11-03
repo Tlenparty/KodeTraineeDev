@@ -5,7 +5,7 @@ import io.reactivex.disposables.CompositeDisposable
 import moxy.MvpPresenter
 import moxy.MvpView
 
-open class BasePresenter<T: MvpView> (private val router: Router): MvpPresenter<T>() {
+open class BasePresenter<T: MvpView> (protected val router: Router): MvpPresenter<T>() {
 
      protected  val disposables = CompositeDisposable()
 

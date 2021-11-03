@@ -4,6 +4,8 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class CompanyUser(
+    @SerializedName("id")
+    val id: String,
 
     @SerializedName("firstName")
     val firstName: String,

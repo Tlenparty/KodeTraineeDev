@@ -9,7 +9,7 @@ import by.kirich1409.viewbindingdelegate.CreateMethod
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geekbrains.kodetraineedev.App.Navigation.router
 import com.geekbrains.kodetraineedev.base_logic.users.adapter.UserAdapter
-import com.geekbrains.kodetraineedev.databinding.UsersFragmentBinding
+import com.geekbrains.kodetraineedev.databinding.VpUsersFragmentBinding
 import com.geekbrains.kodetraineedev.helpers.scheduler.AppSchedulersFactory
 import com.geekbrains.kodetraineedev.model.repositories.company.CompanyUserRepositoryFactory
 import moxy.MvpAppCompatFragment
@@ -17,7 +17,7 @@ import moxy.ktx.moxyPresenter
 
 class UsersFragment : MvpAppCompatFragment(), UsersView, UserAdapter.Delegate {
 
-    private val binding: UsersFragmentBinding by viewBinding(createMethod = CreateMethod.INFLATE)
+    private val binding: VpUsersFragmentBinding by viewBinding(createMethod = CreateMethod.INFLATE)
     private val usersAdapter = UserAdapter(this)
     private val presenter: UsersPresenter by moxyPresenter {
         UsersPresenter(
@@ -52,12 +52,11 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, UserAdapter.Delegate {
         Toast.makeText(requireContext(), error.message, Toast.LENGTH_LONG).show()
     }
 
-    companion object {
-        fun newInstance() = UsersFragment()
+    override fun onUserPicked(user: CompanyUsersViewModel) {
+        presenter.displayProfile(user)
     }
 
-
-    override fun onUserPicked(user: CompanyUsersViewModel) {
-        //presenter.displayUser(user)
+    companion object {
+        fun newInstance() = UsersFragment()
     }
 }
