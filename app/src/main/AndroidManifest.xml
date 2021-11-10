@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".base_logic.main.MainActivity"
+            android:name=".base_logic.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

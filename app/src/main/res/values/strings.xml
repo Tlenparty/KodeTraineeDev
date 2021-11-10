@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">KodeTraineeDev</string>
     <string name="search_name_tag_mail">Введите имя, тег, почту</string>
-    <string name="tab_1">Все</string>
-    <string name="tab_2">Designers</string>
-    <string name="tab_3">Analysts</string>
-    <string name="tab_4">Managers</string>
-    <string name="tab_5">iOS</string>
+    <string name="all">Все</string>
+    <string name="designers">Designers</string>
+    <string name="analysts">Analysts</string>
+    <string name="managers">Managers</string>
 </resources>

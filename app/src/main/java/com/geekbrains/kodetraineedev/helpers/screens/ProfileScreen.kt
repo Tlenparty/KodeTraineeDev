@@ -8,5 +8,4 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 class ProfileScreen(private val bundle:Bundle):FragmentScreen {
     override fun createFragment(factory: FragmentFactory): Fragment = ProfileFragment.newInstance(bundle)
-
 }

@@ -1,9 +1,10 @@
-package com.geekbrains.kodetraineedev.base_logic.main
+package com.geekbrains.kodetraineedev.base_logic
 
 import android.os.Bundle
 import com.geekbrains.kodetraineedev.App.Navigation.navigatorHolder
 import com.geekbrains.kodetraineedev.App.Navigation.router
 import com.geekbrains.kodetraineedev.R
+import com.geekbrains.kodetraineedev.helpers.screens.MainScreen
 import com.geekbrains.kodetraineedev.helpers.screens.UsersScreen
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import moxy.MvpAppCompatActivity
@@ -19,7 +20,7 @@ class MainActivity : MvpAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        savedInstanceState ?: router.newRootScreen(UsersScreen())
+        savedInstanceState ?: router.newRootScreen(MainScreen()) // UsersScreen()
     }
 
     override fun onPause() {

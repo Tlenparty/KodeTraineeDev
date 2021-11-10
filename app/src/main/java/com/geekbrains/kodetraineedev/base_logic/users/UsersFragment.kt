@@ -41,7 +41,7 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, UserAdapter.Delegate {
     }
 
     override fun startUpdateUsers() {
-        binding.progressBar2.visibility = View.GONE
+        //binding.progressBar2.visibility = View.GONE
     }
 
     override fun showUsers(users: List<CompanyUsersViewModel>) {
