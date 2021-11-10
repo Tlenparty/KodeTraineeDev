@@ -1,4 +1,4 @@
-package com.geekbrains.kodetraineedev.base_logic.users
+package com.geekbrains.kodetraineedev.base_logic.analysts
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,22 +7,23 @@ import android.view.ViewGroup
 import android.widget.Toast
 import by.kirich1409.viewbindingdelegate.CreateMethod
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.geekbrains.kodetraineedev.App.Navigation.router
+import com.geekbrains.kodetraineedev.App
+import com.geekbrains.kodetraineedev.base_logic.users.CompanyUsersViewModel
 import com.geekbrains.kodetraineedev.base_logic.users.adapter.UserAdapter
-import com.geekbrains.kodetraineedev.databinding.VpUsersFragmentBinding
+import com.geekbrains.kodetraineedev.databinding.VpAnalystsFragmentBinding
 import com.geekbrains.kodetraineedev.helpers.scheduler.AppSchedulersFactory
 import com.geekbrains.kodetraineedev.model.repositories.company.CompanyUserRepositoryFactory
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
-class UsersFragment : MvpAppCompatFragment(), UsersView, UserAdapter.Delegate {
+class AnalystsFragment : MvpAppCompatFragment(), AnalystsView, UserAdapter.Delegate {
 
-    private val binding: VpUsersFragmentBinding by viewBinding(createMethod = CreateMethod.INFLATE)
+    private val binding: VpAnalystsFragmentBinding by viewBinding(createMethod = CreateMethod.INFLATE)
     private val usersAdapter = UserAdapter(this)
-    private val presenter: UsersPresenter by moxyPresenter {
-        UsersPresenter(
+    private val presenter: AnalystsPresenter by moxyPresenter {
+        AnalystsPresenter(
             companyUserRepository = CompanyUserRepositoryFactory.create(),
-            router = router,
+            router = App.router,
             appSchedulers = AppSchedulersFactory.create()
         )
     }
@@ -37,11 +38,8 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, UserAdapter.Delegate {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter.loadData()
         binding.rvUsers.adapter = usersAdapter
-    }
-
-    override fun startUpdateUsers() {
-        //binding.progressBar2.visibility = View.GONE
     }
 
     override fun showUsers(users: List<CompanyUsersViewModel>) {
@@ -55,8 +53,5 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, UserAdapter.Delegate {
     override fun onUserPicked(user: CompanyUsersViewModel) {
         presenter.displayProfile(user)
     }
-
-    companion object {
-        fun newInstance() = UsersFragment()
-    }
 }
+

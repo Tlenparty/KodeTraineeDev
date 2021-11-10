@@ -7,7 +7,6 @@ import com.github.terrakok.cicerone.Router
 
 class ProfilePresenter(
     private val user: CompanyUsersViewModel?,
-    private val appSchedulers: AppSchedulers,
     router: Router
 ):BasePresenter<ProfileView>(router) {
 

@@ -22,7 +22,6 @@ class ProfileFragment : MvpAppCompatFragment(),ProfileView {
     private val presenter by moxyPresenter {
         ProfilePresenter(
             user,
-            appSchedulers = AppSchedulersFactory.create(),
             router = App.router
         )
     }
