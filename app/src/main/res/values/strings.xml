@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">KodeTraineeDev</string>
+    <string name="search_name_tag_mail">Введите имя, тег, почту</string>
+    <string name="all">Все</string>
+    <string name="designers">Designers</string>
+    <string name="analysts">Analysts</string>
+    <string name="managers">Managers</string>
+    <string name="alphabet_sort">По алфавиту</string>
+    <string name="birthday_sort">По алфавиту</string>
+    <string name="sort">Сортировка</string>
 </resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- аватарка пользователя -->
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/profile_avatar_size"
+        android:layout_height="@dimen/profile_avatar_size"
+        android:paddingTop="@dimen/border_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@color/black" />
+
+    <!-- имя пользователя -->
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/ProfileTitleTextStyle"
+        android:paddingTop="@dimen/border_margin"
+        app:layout_constraintEnd_toStartOf="@id/tv_surname"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_avatar"
+        tools:text="Name" />
+
+    <!-- фамилия пользователя -->
+    <TextView
+        android:id="@+id/tv_surname"
+        style="@style/ProfileTitleTextStyle"
+        android:paddingStart="@dimen/margin_small"
+        android:paddingTop="@dimen/border_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/iv_avatar"
+        tools:ignore="RtlSymmetry"
+        tools:text="Surname" />
+
+    <!-- департамент пользователя -->
+    <TextView
+        android:id="@+id/tv_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_x_small"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/profile_department_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="Department" />
+
+    <ImageView
+        android:id="@+id/iv_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/border_margin"
+        android:layout_marginTop="@dimen/birthday_margin"
+        android:src="@drawable/ic_baseline_star_border_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_department"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/border_margin"
+        android:layout_marginTop="@dimen/phone_margin"
+        android:src="@drawable/ic_baseline_phone_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_department"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_birthday"
+        style="@style/ProfileDescriptionTextStyle"
+        android:layout_marginTop="@dimen/birthday_margin"
+        app:layout_constraintStart_toEndOf="@id/iv_star"
+        app:layout_constraintTop_toBottomOf="@+id/tv_department"
+        tools:text="5 июня 1996" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        style="@style/ProfileDescriptionTextStyle"
+        android:layout_marginTop="@dimen/phone_margin"
+        app:layout_constraintStart_toEndOf="@id/iv_phone"
+        app:layout_constraintTop_toBottomOf="@+id/tv_department"
+        tools:text="8 800 555 35 35 " />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
