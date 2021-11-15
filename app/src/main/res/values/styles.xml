@@ -49,6 +49,7 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <!--стиль табов-->
     <style name="TabCustomButtonStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -60,6 +61,16 @@
         <item name="android:lines">1</item>
         <item name="android:ellipsize">end</item>
         <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <!--стиль BottomSheetDialog-->
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <!--стиль BottomSheet-->
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
 </resources>

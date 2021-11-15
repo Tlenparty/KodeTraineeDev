@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sort"
+        android:textSize="@dimen/bs_title_text_size"/>
+
+  <RadioGroup
+      android:id="@+id/radio_group"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <com.google.android.material.radiobutton.MaterialRadioButton
+          android:id="@+id/rb_alphabet"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/alphabet_sort"/>
+
+      <com.google.android.material.radiobutton.MaterialRadioButton
+          android:id="@+id/rb_birthday"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/birthday_sort"/>
+
+
+  </RadioGroup>
+
+</LinearLayout>

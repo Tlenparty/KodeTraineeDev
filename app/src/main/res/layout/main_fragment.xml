@@ -42,5 +42,4 @@
             android:id="@+id/view_pager_layout"
             layout="@layout/view_pager" />
     </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

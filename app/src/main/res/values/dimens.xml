@@ -18,4 +18,7 @@
     <dimen name="users_avatar_size">72dp</dimen>
     <dimen name="profile_avatar_size">104dp</dimen>
     <dimen name="phone_margin">120dp</dimen>
+    //BottomSheet
+    <dimen name="bs_title_text_size">20sp</dimen>
+    <dimen name="bs_item_text_size">16sp</dimen>
 </resources>

@@ -7,6 +7,6 @@ import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface MainView:ScreenView {
-
+    fun setEndIconListener()
     fun setViewPager2()
 }
