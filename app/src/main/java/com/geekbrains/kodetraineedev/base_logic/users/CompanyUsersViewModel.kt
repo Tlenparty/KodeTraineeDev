@@ -24,16 +24,16 @@ data class CompanyUsersViewModel(
 // "birthday": "2004-08-02",
     object Mapper {
         fun map(user: CompanyUser): CompanyUsersViewModel {
-            val dateFormatter = SimpleDateFormat("yyyy-MM-dd",Locale.getDefault())
-                .parse(user.birthday)
-                .toString()
+            val dateFormatter = SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).parse(user.birthday)
+            val formattedDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(dateFormatter).toString()
+
             return CompanyUsersViewModel(
                 user.id,
                 user.firstName,
                 user.lastName,
                 user.department,
                 user.avatarUrl,
-                dateFormatter,
+                formattedDate,
                 user.phone
             )
         }

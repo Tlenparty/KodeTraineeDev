@@ -12,8 +12,12 @@ import com.geekbrains.kodetraineedev.databinding.BottomSheetLayoutBinding
 import com.geekbrains.kodetraineedev.helpers.Constants
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class BottomSheetFragment: BottomSheetDialogFragment() {
+class BottomSheetFragment : BottomSheetDialogFragment() {
     private val binding: BottomSheetLayoutBinding by viewBinding(createMethod = CreateMethod.INFLATE)
+
+    var listener: (Int) -> Unit = {
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,8 +37,8 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
         }
     }
 
-    private fun setFilter(filer:Int){
-        // TODO: 13.11.2021 =( 
+    private fun setFilter(filter: Int) {
+        listener(filter)
     }
 
 }

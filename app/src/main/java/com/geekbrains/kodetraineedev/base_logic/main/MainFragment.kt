@@ -49,7 +49,12 @@ class MainFragment : MvpAppCompatFragment(), MainView {
 
     override fun setEndIconListener()= with(binding) {
         tiLayout.setEndIconOnClickListener {
-            BottomSheetFragment().show(childFragmentManager,"tag")
+            val fragment = BottomSheetFragment()
+            fragment.listener = {
+                Toast.makeText(context, "$it",Toast.LENGTH_SHORT).show()
+                fragment.dismiss()
+            }
+            fragment.show(childFragmentManager,null)
         }
     }
 

@@ -8,7 +8,7 @@ import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.subjects.BehaviorSubject
 
-class NetWorkStatusImpl(context: Context) : NetworkStatus {
+class xNetWorkStatusImpl(context: Context) : NetworkStatus {
 
     private val statusSubject: BehaviorSubject<Boolean> = BehaviorSubject.create()
     private val networkCallback: ConnectivityManager.NetworkCallback
