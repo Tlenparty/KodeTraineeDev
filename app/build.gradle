@@ -55,10 +55,10 @@ dependencies {
     // OkHttp
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     // Moxy
-    implementation "com.github.moxy-community:moxy:2.1.2"
-    kapt "com.github.moxy-community:moxy-compiler:2.1.2"
-    implementation "com.github.moxy-community:moxy-ktx:2.1.2"
-    implementation "com.github.moxy-community:moxy-androidx:2.1.2"
+    implementation "com.github.moxy-community:moxy:2.2.2"
+    kapt "com.github.moxy-community:moxy-compiler:2.2.2"
+    implementation "com.github.moxy-community:moxy-ktx:2.2.2"
+    implementation "com.github.moxy-community:moxy-androidx:2.2.2"
     // RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     // Retrofit
