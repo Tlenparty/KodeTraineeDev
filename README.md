@@ -1,50 +1,50 @@
 # KodeTraineeDev
 
-Тестовое задание на позицию Android-стажёра в компании [KODE](https://kode.ru/):
-справочник сотрудников компании. Приложение загружает список сотрудников
-с мокового API, показывает его с разбивкой по отделам и открывает профиль
-сотрудника.
+A take-home assignment for an Android intern position at [KODE](https://kode.ru/):
+a company employee directory. The app loads the list of employees
+from a mock API, shows it split by department and opens an employee
+profile.
 
-## Возможности
+## Features
 
-- Список сотрудников с аватаром, именем и отделом (RecyclerView + DiffUtil)
-- Вкладки отделов на ViewPager2 с кастомными табами: все, дизайнеры, аналитики, менеджеры
-- Профиль сотрудника: имя, фамилия, отдел, дата рождения, телефон
-- Навигация между экранами в Single Activity через Cicerone
-- Нижний лист выбора сортировки (по алфавиту / по дню рождения) — пока только интерфейс,
-  сама сортировка не реализована
+- Employee list with avatar, name and department (RecyclerView + DiffUtil)
+- Department tabs on ViewPager2 with custom tabs: all, designers, analysts, managers
+- Employee profile: first name, last name, department, birth date, phone number
+- Single Activity navigation between screens via Cicerone
+- Bottom sheet for choosing the sort order (alphabetical / by birthday) — UI only so far,
+  the sorting itself is not implemented
 
-## Стек
+## Tech stack
 
-| Область        | Технологии                                   |
+| Area           | Technologies                                 |
 |----------------|----------------------------------------------|
-| Язык           | Kotlin                                       |
-| Архитектура    | MVP (Moxy), Repository, Single Activity      |
-| Навигация      | Cicerone                                     |
-| Асинхронность  | RxJava 2                                     |
-| Сеть           | Retrofit, OkHttp, Gson                       |
-| Изображения    | Glide                                        |
+| Language       | Kotlin                                       |
+| Architecture   | MVP (Moxy), Repository, Single Activity      |
+| Navigation     | Cicerone                                     |
+| Concurrency    | RxJava 2                                     |
+| Networking     | Retrofit, OkHttp, Gson                       |
+| Images         | Glide                                        |
 | UI             | ViewBinding (ViewBindingPropertyDelegate), Material Components, ViewPager2 |
 
-## Структура
+## Project structure
 
 ```
 app/src/main/java/com/tlenparty/kodetraineedev/
-├── api/            # Retrofit-интерфейс и фабрика клиента
+├── api/            # Retrofit interface and client factory
 ├── base_logic/
-│   ├── main/       # главный экран: поле поиска, вкладки, нижний лист сортировки
-│   ├── users/      # список всех сотрудников и адаптер
-│   ├── designers/  # вкладки отделов
+│   ├── main/       # main screen: search field, tabs, sort bottom sheet
+│   ├── users/      # list of all employees and adapter
+│   ├── designers/  # department tabs
 │   ├── analysts/
 │   ├── managers/
-│   └── profile/    # профиль сотрудника
-├── model/          # DTO и репозиторий сотрудников
-└── helpers/        # экраны Cicerone, Rx-планировщики, статус сети, расширения
+│   └── profile/    # employee profile
+├── model/          # DTOs and employee repository
+└── helpers/        # Cicerone screens, Rx schedulers, network status, extensions
 ```
 
-## Сборка
+## Build
 
-Требуется JDK 11–17 и Android SDK 31.
+Requires JDK 11–17 and Android SDK 31.
 
 ```bash
 ./gradlew assembleDebug
